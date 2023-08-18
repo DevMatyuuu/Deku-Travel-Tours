@@ -8,7 +8,7 @@ function NavBar() {
   return (
     <div className="flex h-20 items-center justify-between mx-6">
         <Image src='' alt="logo" width={24} height={24} />
-        <div className="hidden md:flex">
+        <div className="hidden lg:flex lg:gap-28 ">
             {navLinks.map((link) => (
                 <Link key={link.name} href={link.route}>
                     {link.name}

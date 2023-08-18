@@ -15,7 +15,18 @@ export default function RootLayout({children} : {children: React.ReactNode}) {
         <ClerkProvider>
             <html lang="en">
                 <body className={inter.className}>
-                    <video loop autoPlay className="absolute h-screen object-cover">
+                    <div className="flex justify-center lg:justify-start items-center">
+                        <p className="flex absolute text-white z-50 text-4xl lg:text-7xl top-24 lg:top-[30%] lg:left-48 font-extrabold">
+                            Welcome to
+                        </p>
+                        <p className="flex absolute text-white z-50 text-4xl lg:text-7xl top-[17%] lg:top-[40%] lg:left-48 font-extrabold">
+                            Deku Travel & Tours!
+                        </p>
+                        <p className="flex absolute text-white z-50 text-sm lg:text-lg top-48 lg:top-[50%] lg:left-[200px] font-bold">
+                            Let's convert your dream into reality
+                        </p>
+                    </div>
+                    <video loop autoPlay muted className="absolute h-screen object-cover brightness-50">
                         <source src="/videoBG.mp4" />
                     </video>
                     {children}
