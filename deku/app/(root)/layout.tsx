@@ -4,8 +4,12 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import NavBar from '@/components/NavBar'
 import Footer from '@/components/Footer'
+import BG from '@/public/homeBG.jpg'
+import Image from 'next/image'
+import { Raleway } from 'next/font/google'
 
 const inter = Inter({ subsets: ['latin'] })
+const raleway = Raleway({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -20,9 +24,10 @@ export default function RootLayout({
   return (
     <ClerkProvider>
       <html lang="en">
-        <body className={inter.className}>
-          <NavBar />
-          {children}
+        <body className={raleway.className}>
+        <Image src={BG} alt='bg' className='absolute lg:object-fit object-cover w-full lg:h-[600px] h-[50%] brightness-50 z-0 rounded-b-lg'/>
+              <NavBar />
+              {children}
           <Footer />
         </body>
       </html>
