@@ -33,6 +33,8 @@ function PopularDestinations() {
           <div key={destination.id}>
             <p className="text-black z-50 flex justify-center">{destination.destination}</p>
             <img src={destination.media} alt='image'/>
+            <p>{destination.country}</p>
+            <p>{destination.rating}</p>
           </div>
         ))}
       </div>

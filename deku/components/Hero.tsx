@@ -8,7 +8,7 @@ import img3 from '@/public/heroImg3.jpg'
 
 function Hero() {
   return (
-    <div className='h-screen'>
+    <div className='h-[90vh]'>
         <div className='lg:flex grid-cols-1 gap-10 lg:w-[100%] justify-center'>
             <div className='flex-col lg:text-6xl text-2xl lg:text-start text-center font-semibold'>
                 <h1>The best experience you</h1>

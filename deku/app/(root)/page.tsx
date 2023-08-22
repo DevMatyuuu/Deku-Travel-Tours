@@ -4,6 +4,7 @@ import BookPlan from "@/components/BookBox/BookPlan";
 import Image from "next/image";
 import BG from '@/public/homeBG2.jpg'
 import Hero from "@/components/Hero";
+import PopularDestinations from "@/components/PopularDestinations";
 
 
 export default function Home() {
@@ -21,6 +22,9 @@ export default function Home() {
     </div>
     <div className="relative pt-[55%]">
       <Hero />
+    </div>
+    <div className="">
+      <PopularDestinations />
     </div>
     </>
   )
