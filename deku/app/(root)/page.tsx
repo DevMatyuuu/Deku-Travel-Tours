@@ -5,6 +5,7 @@ import Image from "next/image";
 import BG from '@/public/homeBG2.jpg'
 import Hero from "@/components/Hero";
 import PopularDestinations from "@/components/PopularDestinations";
+import Stats from "@/components/Stats";
 
 
 export default function Home() {
@@ -23,7 +24,10 @@ export default function Home() {
     <div className="relative pt-[55%]">
       <Hero />
     </div>
-    <div className="">
+    <div className="lg:w-100">
+      <Stats />
+    </div>
+    <div className="pt-[10%]">
       <PopularDestinations />
     </div>
     </>

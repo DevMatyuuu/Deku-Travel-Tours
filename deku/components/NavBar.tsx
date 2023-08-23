@@ -25,13 +25,15 @@ function NavBar() {
 
 
   return (
-    <Navbar className={`${navColor ?  'bg-white text-black'  : 'bg-transparent z-50' } z-50 fixed lg:h-max border-none shadow-none`}>
+    <Navbar className={`${navColor ?  'bg-white'  : 'bg-transparent z-50' } z-50 fixed lg:h-max border-none shadow-none`}>
         <div className="flex h-20 items-center justify-between lg:mx-32 mx-3">
             <Image src={logo} alt="logo" width={28} height={28} />
             <div className="hidden lg:flex lg:gap-28 lg:font-bold">
                 {navLinks.map((link) => (
                     <Link key={link.name} href={link.route}>
-                        {link.name}
+                        <div className={`${navColor ? 'text-black hover:text-blue-500' : 'text-white hover:text-blue-500'}`}>
+                            {link.name}
+                        </div>
                     </Link>
                 ))}
             </div>
