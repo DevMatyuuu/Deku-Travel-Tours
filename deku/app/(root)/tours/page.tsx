@@ -1,9 +1,8 @@
-import Link from "next/link";
+import React from 'react'
 
-export default function Destinations() {
+export default function Tour() {
   return (
-    <div className="relative z-50">
-      <Link href='/country'>tae</Link>
-    </div>
+    <div>page</div>
   )
 }
+

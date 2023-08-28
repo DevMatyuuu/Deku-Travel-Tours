@@ -4,4 +4,6 @@ type Destination = {
     country?: string,
     rating?: string,
     media?: string,
+    detailsMedia?:string,
+    image?: string,
 };

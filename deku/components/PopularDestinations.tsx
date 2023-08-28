@@ -2,17 +2,18 @@
 
 import { DocumentData, QuerySnapshot, onSnapshot } from "firebase/firestore";
 import { useEffect, useState } from "react";
-import { destinationCollection } from "@/controller";
-import { Card, CardContent } from "./ui/card";
+import { popularQ } from "@/controller";
+import { useRouter } from "next/navigation";
+import { Tooltip } from "@material-tailwind/react";
 
 
 function PopularDestinations() {
-  const [destination, setDestination] = useState<Destination[]>([]);
+  const [popular, setPopular] = useState<Destination[]>([]);
 
     useEffect(
-      () => 
-       onSnapshot(destinationCollection, (snapshot: QuerySnapshot<DocumentData>) => {
-       setDestination( 
+      () => {
+      const unsubscribe = onSnapshot(popularQ, (snapshot: QuerySnapshot<DocumentData>) => {
+       setPopular( 
         snapshot.docs.map((doc) => {
           return {
             id: doc.id,
@@ -20,27 +21,39 @@ function PopularDestinations() {
           }
         })
        );
-    }),
+    });
+    return () => unsubscribe();
+  },
     []
   );
+
+  const popularDes = popular.reverse()
+
+  const router = useRouter();
+
+  const seeMore = (id: string | undefined) => {
+    router.push(`/destination/${id}`)
+  }
   return (
     <section>
       <div className="flex-col justify-center text-center lg:text-5xl lg:font-extrabold">
         <h1 className="lg:mb-3">Popular Destinations</h1>
         <p className="text-lg text-gray-500 font-normal">We make travel easy and effortless</p>
       </div>
-      <div className="lg:pt-16 flex lg:gap-10 justify-center">
-        {destination?.map((destination) => (
-          <div key={destination.id} className="hover:scale-105 hover:duration-300">
-                <img src={destination.media} className="lg:h-80 lg:w-80 object-fit rounded-xl z-49 border-black"/>
-                <div className="lg:flex text-white backdrop-brightness-50 backdrop-opacity-40  lg:bottom-14 lg:relative z-50 lg:h-14">
-                  <p className="lg:w-40 lg:ml-5 lg:pt-0 ">{destination.destination}</p>
-                  <p className="lg:absolute lg:w-40 lg:ml-5 lg:pt-6 ">{destination.country}</p>
-                  <p className="lg:ml-24 lg:pt-3">{destination.rating}</p>
-                </div>
-          </div>
-        ))}
-      </div>
+      <div className="lg:pt-16 grid lg:gap-10 lg:grid-cols-4 lg:w-[81%] mx-auto">
+      {popularDes.map((popular) => (
+        <>
+        <div onClick={() => seeMore(popular.id)} key={popular.id} className="hover:scale-105  hover:duration-300 cursor-pointer lg:w-80 lg:h-80">
+            <img src={popular.media} className="lg:h-80 lg:w-80 object-fit rounded-xl z-49 border-black group-hover:blur-sm"/>
+            <div className="lg:flex text-white backdrop-brightness-[20%] backdrop-opacity-40 rounded-b-xl lg:bottom-16 lg:relative lg:w-80 z-50 lg:h-16">
+                <p className="lg:w-40 lg:ml-5 lg:pt-2">{popular.destination}</p>
+                <p className="lg:absolute lg:w-40 lg:ml-5 lg:pt-7">{popular.country}</p>
+                <p className="lg:ml-24 lg:pt-5">{popular.rating}</p>
+            </div>
+        </div>
+        </>
+    ))}
+    </div>
     </section>
   )
 }
