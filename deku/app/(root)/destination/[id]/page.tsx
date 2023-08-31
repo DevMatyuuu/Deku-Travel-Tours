@@ -31,16 +31,21 @@ export default function DestinationDetails({ params }: Props) {
     const selectedDestination = destinationData.find(destination => destination.id === params.id);
 
     return (
+        <>
         <div>
             {selectedDestination ? (
                 <div key={selectedDestination.id}>
-                    <img src={selectedDestination.detailsMedia} className='lg:w-full lg:h-[400px] bg-cover'/>
-                    <h1>{selectedDestination.destination}</h1>
-                    <h1>{selectedDestination.country}</h1>
+                    <img src={selectedDestination.detailsMedia} className='lg:w-full lg:h-[400px] bg-cover brightness-50'/>
+                    <h1 className='flex lg:absolute text-white text-7xl top-48 left-1/2 transform -translate-x-1/2 -translate-y-1/2'>{selectedDestination.destination}</h1>
+                    <h1 className='flex lg:absolute text-white text-2xl top-64 left-1/2 transform -translate-x-1/2 -translate-y-1/2'>{selectedDestination.country}</h1>
                 </div>
             ) : (
                 <p>Loading...</p>
             )}
         </div>
+        <div>
+
+        </div>
+        </>
     );
 }

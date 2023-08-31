@@ -4,7 +4,7 @@ import { DocumentData, QuerySnapshot, onSnapshot } from "firebase/firestore";
 import { useEffect, useState } from "react";
 import { popularQ } from "@/controller";
 import { useRouter } from "next/navigation";
-import { Tooltip } from "@material-tailwind/react";
+import {AiFillStar} from 'react-icons/ai'
 
 
 function PopularDestinations() {
@@ -48,7 +48,7 @@ function PopularDestinations() {
             <div className="lg:flex text-white backdrop-brightness-[20%] backdrop-opacity-40 rounded-b-xl lg:bottom-16 lg:relative lg:w-80 z-50 lg:h-16">
                 <p className="lg:w-40 lg:ml-5 lg:pt-2">{popular.destination}</p>
                 <p className="lg:absolute lg:w-40 lg:ml-5 lg:pt-7">{popular.country}</p>
-                <p className="lg:ml-24 lg:pt-5">{popular.rating}</p>
+                <p className="lg:ml-20 lg:pt-2 flex items-center gap-1">{popular.rating}<AiFillStar /></p>
             </div>
         </div>
         </>

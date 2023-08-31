@@ -7,6 +7,9 @@ export const db = getFirestore(app);
 export const destinationCollection = collection(db, "destinations");
 
 //POPULAR DESTINATION QUERY
-export const popularQ = query(destinationCollection, where("rating", ">=", "4")); 
+export const popularQ = query(destinationCollection, where("rating", ">=", "4.5")); 
+
+
+
 
 

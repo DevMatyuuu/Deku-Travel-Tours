@@ -24,19 +24,19 @@ function BookPlan() {
                </CardHeader>
                   <CardContent className='lg:flex grid-cols-1 gap-10 '>
                     <div>
-                        <h1 className="lg:mb-2">Choose Destination:</h1>
+                        <h1 className="lg:mb-2 lg:text-sm lg:ml-2">Choose Destination:</h1>
                         <DestinationBox />
                      </div>
                      <div>
-                        <h1 className="lg:mb-2">Check-in - Check-out:</h1>
+                        <h1 className="lg:mb-2 lg:text-sm lg:ml-2">Check-in - Check-out:</h1>
                         <DatePicker />
                      </div>
                      <div>
-                        <h1 className="lg:mb-2">Accomodation:</h1>
+                        <h1 className="lg:mb-2 lg:text-sm lg:ml-2">Accomodation:</h1>
                         <AccomodationCount/>
                      </div>
                      <div>
-                        <h1 className="lg:mb-8"></h1>
+                        <h1 className="lg:mb-7"></h1>
                         <Button className="lg:flex grid mx-auto bg-blue-500 hover:bg-sky-400">Search</Button>
                      </div>
                   </CardContent>
