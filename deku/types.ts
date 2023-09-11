@@ -6,4 +6,6 @@ type Destination = {
     media?: string,
     detailsMedia?:string,
     image?: string,
+    description?: string,
+    continent?: string;
 };

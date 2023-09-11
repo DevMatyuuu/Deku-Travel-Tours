@@ -23,7 +23,7 @@ function NavBar() {
     window.addEventListener('scroll', changeColor)
     }
 
-
+    
   return (
     <Navbar className={`${navColor ?  'bg-white'  : 'bg-transparent z-50' } z-50 fixed lg:h-max border-none shadow-none`}>
         <div className="flex h-20 items-center justify-between lg:mx-32 mx-3">

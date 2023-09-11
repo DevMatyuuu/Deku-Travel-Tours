@@ -1,9 +1,18 @@
 import React from 'react'
 
-function page() {
+function Destination() {
   return (
-    <div>hi</div>
+    <>
+      <div className='lg:flex'>
+        <div>
+          
+        </div>
+        <div>
+
+        </div>
+      </div>
+    </>
   )
 }
 
-export default page
+export default Destination

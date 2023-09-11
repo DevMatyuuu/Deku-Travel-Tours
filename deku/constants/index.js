@@ -4,8 +4,8 @@ export const navLinks = [
         name: 'Home',
     },
     {
-        route:'/tours',
-        name: 'Tours',
+        route:'/destination',
+        name: 'Destinations',
     },
     {
         route:'/about',
@@ -19,23 +19,15 @@ export const navLinks = [
 
 export const detailLinks = [
     {
-        route:'/',
-        name: 'About',
+        title: 'About',
+        value: 'about'
     },
     {
-        route:'/tours',
-        name: 'Reviews',
+        title: 'Gallery',
+        value: 'gallery'
     },
     {
-        route:'/travel-guide',
-        name: 'Travel Guide',
-    },
-    {
-        route:'/about',
-        name: 'About Us',
-    },
-    {
-        route:'/contact',
-        name: 'Contact Us',
+        title: 'Guide',
+        value: 'guide'
     },
 ]
